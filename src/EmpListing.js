@@ -36,7 +36,8 @@ const EmpListing = () => {
       .then((resp) => {
         empdatachange(resp);
       })
-      .catch((err) => {});
+      .catch((err) => {
+});
   }, []);
   return (
     <div className="container">
