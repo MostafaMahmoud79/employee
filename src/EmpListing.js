@@ -23,7 +23,6 @@ const EmpListing = () => {
           empdatachange((prevData) => prevData.filter((emp) => emp.id !== id));
         })
         .catch((err) => {
-          console.error("Error:", err.message);
           alert(`Error: ${err.message}`);
         });
     }
@@ -37,9 +36,7 @@ const EmpListing = () => {
       .then((resp) => {
         empdatachange(resp);
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+      .catch((err) => {});
   }, []);
   return (
     <div className="container">

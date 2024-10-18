@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // تأكد من استيراد useEffect
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const EmpCreate = () => {
@@ -25,7 +25,7 @@ const EmpCreate = () => {
           setId(1);
         }
       })
-      .catch((err) => console.log("Error fetching data: ", err.message));
+      .catch((err) => {});
   }, []);
 
   const handlesubmit = (e) => {
@@ -41,7 +41,7 @@ const EmpCreate = () => {
         alert("Saved successfully.");
         navigate("/");
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => {});
   };
 
   return (

@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 
 const EmpDetail = () => {
   const { empid } = useParams();
-  console.log(empid);
 
   const [empdata, empdatachange] = useState({});
 
@@ -13,17 +12,13 @@ const EmpDetail = () => {
         return res.json();
       })
       .then((resp) => {
-        console.log(empid);
         const data = resp.filter((emp) => {
           return emp.id == empid;
         });
         empdatachange(data[0]);
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-  console.log(empdata);
+      .catch((err) => {});
+}, []);
   return (
     <div>
       {/* <div className="row">
