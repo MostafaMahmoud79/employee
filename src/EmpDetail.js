@@ -13,12 +13,12 @@ const EmpDetail = () => {
       })
       .then((resp) => {
         const data = resp.filter((emp) => {
-          return emp.id == empid;
+          return emp.id === empid;
         });
         empdatachange(data[0]);
       })
       .catch((err) => {});
-}, []);
+}, [empid]);
   return (
     <div>
       {/* <div className="row">

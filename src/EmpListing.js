@@ -36,8 +36,7 @@ const EmpListing = () => {
       .then((resp) => {
         empdatachange(resp);
       })
-      .catch((err) => {
-});
+      .catch((err) => {});
   }, []);
   return (
     <div className="container">
@@ -71,30 +70,26 @@ const EmpListing = () => {
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>
-                      <a
-                        onClick={() => {
-                          LoadDEdit(item.id);
-                        }}
-                        className="btn btn-success"
+                      <button
+                        onClick={() => LoadDatail(item.id)}
+                        style={{ all: "unset", cursor: "pointer" }}
                       >
-                        Edit
-                      </a>
-                      <a
-                        onClick={() => {
-                          Removefunction(item.id);
-                        }}
-                        className="btn btn-danger"
+                        Link Edit
+                      </button>
+
+                      <button
+                        onClick={() => Removefunction(item.id)}
+                        style={{ all: "unset", cursor: "pointer" }}
                       >
-                        Remove
-                      </a>
-                      <a
-                        onClick={() => {
-                          LoadDatail(item.id);
-                        }}
-                        className="btn btn-primary"
+                        Link Remove
+                      </button>
+
+                      <button
+                        onClick={() => LoadDEdit(item.id)}
+                        style={{ all: "unset", cursor: "pointer" }}
                       >
-                        Details
-                      </a>
+                        Link Detail
+                      </button>
                     </td>
                   </tr>
                 ))}
